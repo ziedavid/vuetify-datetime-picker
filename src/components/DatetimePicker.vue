@@ -57,7 +57,6 @@
 
   const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD'
   const DEFAULT_TIME_FORMAT = 'HH:mm'
-  const DEFAULT_TIME = '00:00'
 
   export default {
     name: 'v-datetime-picker',
@@ -134,8 +133,7 @@
       },
       timePart: {
         get () {
-          let val = this.selectedDatetime ? moment(this.selectedDatetime).format(DEFAULT_TIME_FORMAT) : DEFAULT_TIME
-          return val
+          return null
         },
         set (val) {
           if (this.$refs.timer.selectingHour) {
